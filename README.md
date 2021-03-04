@@ -54,27 +54,59 @@ OTA-Mod: When you plan to use the OTA you have to change the SPI-Flash from 4MB 
          After Restarting the Arduino IDE you have to select the Board "AI Thinker ESP32-CAM 16MB Flash"
          
 ```bash
-         esp32cam16mb.name=AI Thinker ESP32-CAM 16MB Flash
+esp32cam16mb.name=AI Thinker ESP32-CAM 16MB Flash
 
-         esp32cam16mb.upload.tool=esptool_py
-         esp32cam16mb.upload.maximum_size=3145728
-         esp32cam16mb.upload.maximum_data_size=327680
-         esp32cam16mb.upload.wait_for_upload_port=true
-         esp32cam16mb.upload.speed=460800
+esp32cam16mb.upload.tool=esptool_py
+esp32cam16mb.upload.maximum_size=3145728
+esp32cam16mb.upload.maximum_data_size=327680
+esp32cam16mb.upload.wait_for_upload_port=true
+esp32cam16mb.upload.speed=460800
 
-         esp32cam16mb.serial.disableDTR=true
-         esp32cam16mb.serial.disableRTS=true
+esp32cam16mb.serial.disableDTR=true
+esp32cam16mb.serial.disableRTS=true
 
-         esp32cam16mb.build.mcu=esp32
-         esp32cam16mb.build.core=esp32
-         esp32cam16mb.build.variant=esp32
-         esp32cam16mb.build.board=ESP32_DEV
-         esp32cam16mb.build.f_cpu=240000000L
-         esp32cam16mb.build.flash_size=16MB
-         esp32cam16mb.build.flash_freq=80m
-         esp32cam16mb.build.flash_mode=dio
-         esp32cam16mb.build.boot=qio
-         esp32cam16mb.build.partitions=default_16MB
-         esp32cam16mb.build.defines=-DBOARD_HAS_PSRAM -mfix-esp32-psram-cache-issue
-         esp32cam16mb.build.code_debug=0
+esp32cam16mb.build.mcu=esp32
+esp32cam16mb.build.core=esp32
+esp32cam16mb.build.variant=esp32
+esp32cam16mb.build.board=ESP32_DEV
+esp32cam16mb.build.flash_size=16MB
+esp32cam16mb.build.partitions=default_16MB
+esp32cam16mb.build.defines=-DBOARD_HAS_PSRAM -mfix-esp32-psram-cache-issue
+esp32cam16mb.build.extra_libs=-lc-psram-workaround -lm-psram-workaround
+esp32cam16mb.build.code_debug=0
+
+esp32cam16mb.menu.CPUFreq.240=240MHz (WiFi/BT)
+esp32cam16mb.menu.CPUFreq.240.build.f_cpu=240000000L
+esp32cam16mb.menu.CPUFreq.160=160MHz (WiFi/BT)
+esp32cam16mb.menu.CPUFreq.160.build.f_cpu=160000000L
+esp32cam16mb.menu.CPUFreq.80=80MHz (WiFi/BT)
+esp32cam16mb.menu.CPUFreq.80.build.f_cpu=80000000L
+esp32cam16mb.menu.CPUFreq.40=40MHz (40MHz XTAL)
+esp32cam16mb.menu.CPUFreq.40.build.f_cpu=40000000L
+esp32cam16mb.menu.CPUFreq.26=26MHz (26MHz XTAL)
+esp32cam16mb.menu.CPUFreq.26.build.f_cpu=26000000L
+esp32cam16mb.menu.CPUFreq.20=20MHz (40MHz XTAL)
+esp32cam16mb.menu.CPUFreq.20.build.f_cpu=20000000L
+esp32cam16mb.menu.CPUFreq.13=13MHz (26MHz XTAL)
+esp32cam16mb.menu.CPUFreq.13.build.f_cpu=13000000L
+esp32cam16mb.menu.CPUFreq.10=10MHz (40MHz XTAL)
+esp32cam16mb.menu.CPUFreq.10.build.f_cpu=10000000L
+
+esp32cam16mb.menu.FlashMode.qio=QIO
+esp32cam16mb.menu.FlashMode.qio.build.flash_mode=dio
+esp32cam16mb.menu.FlashMode.qio.build.boot=qio
+esp32cam16mb.menu.FlashMode.dio=DIO
+esp32cam16mb.menu.FlashMode.dio.build.flash_mode=dio
+esp32cam16mb.menu.FlashMode.dio.build.boot=dio
+esp32cam16mb.menu.FlashMode.qout=QOUT
+esp32cam16mb.menu.FlashMode.qout.build.flash_mode=dout
+esp32cam16mb.menu.FlashMode.qout.build.boot=qout
+esp32cam16mb.menu.FlashMode.dout=DOUT
+esp32cam16mb.menu.FlashMode.dout.build.flash_mode=dout
+esp32cam16mb.menu.FlashMode.dout.build.boot=dout
+
+esp32cam16mb.menu.FlashFreq.80=80MHz
+esp32cam16mb.menu.FlashFreq.80.build.flash_freq=80m
+esp32cam16mb.menu.FlashFreq.40=40MHz
+esp32cam16mb.menu.FlashFreq.40.build.flash_freq=40m
 ```
