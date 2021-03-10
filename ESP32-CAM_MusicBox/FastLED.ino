@@ -1,12 +1,14 @@
 #define LED_PIN     12
 #define NUM_LEDS    15
-#define BRIGHTNESS  12
+#define BRIGHTNESS  25
 #define LED_TYPE    WS2811
 #define COLOR_ORDER GRB
 
+uint8_t iPalette = 0;
 CRGB leds[NUM_LEDS];
 
 #define UPDATES_PER_SECOND 100
+uint16_t refresh_rate = UPDATES_PER_SECOND;
 
 CRGBPalette16 currentPalette;
 TBlendType    currentBlending;
@@ -30,13 +32,34 @@ void setup_FastLED() {
 }
 
 void loop_FastLED() {
-  static uint8_t startIndex = 0;
-  startIndex = startIndex + 1; /* motion speed */
+  if (iPalette != 50) {
+    static uint8_t startIndex = 0;
+    startIndex = startIndex + 1; /* motion speed */
 
-  FillLEDsFromPaletteColors(startIndex);
+    FillLEDsFromPaletteColors(startIndex);
 
-  FastLED.show();
-  FastLED.delay(1000 / UPDATES_PER_SECOND);
+    FastLED.show();
+    FastLED.delay(1000 / refresh_rate);
+
+  } else {
+
+    FastLED.setBrightness( 255 );
+    FastLEDColor(CRGB::White);
+    FastLED.show();
+    delay(100);
+    FastLEDColor(CRGB::Black);
+    FastLED.show();
+    delay(100);
+    FastLEDColor(CRGB::Yellow);
+    FastLED.show();
+    delay(100);
+    FastLEDColor(CRGB::Black);
+    FastLED.show();
+    delay(100);
+    FastLEDColor(CRGB::Magenta);
+    FastLED.show();
+    delay(100);
+  }
 }
 
 void FastLEDColor( const CRGB& rgb)
@@ -48,16 +71,18 @@ void FastLEDColor( const CRGB& rgb)
 }
 
 void FillLEDsFromPaletteColors( uint8_t colorIndex) {
-  uint8_t brightness = 255;
 
   for ( int i = 0; i < NUM_LEDS; i++) {
-    leds[i] = ColorFromPalette( currentPalette, colorIndex, brightness, currentBlending);
+    leds[i] = ColorFromPalette( currentPalette, colorIndex, 255, currentBlending);
     colorIndex += 3;
   }
 }
 
 void SelectPalette(int Palette) {
-
+  iPalette = Palette;
+  refresh_rate = UPDATES_PER_SECOND;
+  
+  FastLED.setBrightness( BRIGHTNESS );
   switch (Palette) {
     case 1:
       currentPalette = CloudColors_p;
@@ -98,6 +123,8 @@ void SelectPalette(int Palette) {
     case 10:
       currentPalette = ForestColors_p;
       currentBlending = LINEARBLEND;
+      break;
+    case 50:
       break;
     case 80:
       currentPalette = RammsteinColors_p;

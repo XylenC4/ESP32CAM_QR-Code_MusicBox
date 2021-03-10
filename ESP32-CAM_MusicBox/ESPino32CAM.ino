@@ -58,7 +58,7 @@ void loop_QRCode()
           // Play MP3
           DFPlayerPlayFolderRandom(res.payload.substring(0, 2).toInt());
           // Shop FastLED pallette
-          SelectPalette(res.payload.substring(4, 5).toInt());
+          SelectPalette(res.payload.substring(3, 5).toInt());
         }
       }
       else {

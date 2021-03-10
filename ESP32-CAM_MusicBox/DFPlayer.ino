@@ -56,7 +56,12 @@ void DFPlayerPlay(int Nr) {
 
 //Play a random file in a defined folder
 void DFPlayerPlayFolderRandom(int FolderNr) {
-  myMP3.volume(VOLUME);  //Set volume value (0~30).
+  if (FolderNr!=50) {
+    myMP3.volume(VOLUME);  //Set volume value (0~30).
+  }
+  else {
+    myMP3.volume(30);  //Set volume value (0~30).
+  }
   int FilesInFoler = DFPlayerGetFolderCount(FolderNr);
 
   if (FilesInFoler < 0) {
