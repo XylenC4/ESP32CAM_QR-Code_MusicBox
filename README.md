@@ -1,6 +1,7 @@
 # ESP32CAM QR-Code MusicBox
 This is an Kids-Toy which plays music by an QR-Code
-
+![Image](Images/MusicBox.png)
+___
 # Informations
 ## Parts
 - 1x [ESP32-CAM](https://www.aliexpress.com/wholesale?SearchText=esp32-cam)
