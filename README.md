@@ -3,13 +3,16 @@ This is an Kids-Toy which plays music by an QR-Code
 
 # Informations
 ## Parts
-- [ESP32-CAM](https://www.aliexpress.com/wholesale?SearchText=esp32-cam)
-- [ESP32 WROOM 16MB](https://www.aliexpress.com/wholesale?SearchText=esp32+wroom+32d+module+16mb)
-- [16MB SPI Flash W25Q128FVSG](https://www.aliexpress.com/wholesale?SearchText=W25Q128FVSG)
-- [INA226](https://www.aliexpress.com/wholesale?SearchText=ina226)
-- [DFPlayer mini](https://github.com/PowerBroker2/DFPlayerMini_Fast)
-- [18650 Charger Protection 5V Supply](https://www.aliexpress.com/wholesale?SearchText=5V+2A+Charge+Discharge)
-- [18650 Holder !PARALELL!](https://www.aliexpress.com/wholesale?SearchText=18650+holder+cable)
+- 1x [ESP32-CAM](https://www.aliexpress.com/wholesale?SearchText=esp32-cam)
+- 1x [ESP32 WROOM 16MB](https://www.aliexpress.com/wholesale?SearchText=esp32+wroom+32d+module+16mb)
+- 1x [16MB SPI Flash W25Q128FVSG](https://www.aliexpress.com/wholesale?SearchText=W25Q128FVSG)
+- 1x [INA226](https://www.aliexpress.com/wholesale?SearchText=ina226)
+- 1x [DFPlayer mini](https://github.com/PowerBroker2/DFPlayerMini_Fast)
+- 1x [5*20mm Glass Fuse fast](https://www.aliexpress.com/wholesale?SearchText=fuse+5%2B20+1A+fast)
+- 1x [5*20mm Glass Fuse holder](https://www.aliexpress.com/wholesale?SearchText=glass+fuse+cable)
+- 1x [18650 Charger Protection 5V Supply](https://www.aliexpress.com/wholesale?SearchText=5V+2A+Charge+Discharge)
+- 1x [18650 Holder !PARALELL!](https://www.aliexpress.com/wholesale?SearchText=18650+holder+cable)
+- 2x Protected 18650 cell, for example Panasonic NCR18650B. I'll recomment to buy it from a trusted shop to be geniune.
 
 ## Used Libaries
 - INA226_WE https://github.com/wollewald/INA226_WE
