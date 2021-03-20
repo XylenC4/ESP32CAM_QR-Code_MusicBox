@@ -110,4 +110,3 @@ esp32cam16mb.menu.FlashFreq.80.build.flash_freq=80m
 esp32cam16mb.menu.FlashFreq.40=40MHz
 esp32cam16mb.menu.FlashFreq.40.build.flash_freq=40m
 ```
-![Image](https://www.youtube.com/watch?v=mkyp9BGGiDk)
