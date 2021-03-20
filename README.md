@@ -6,22 +6,31 @@ This is an Kids-Toy which plays music by an QR-Code
 Used Hardware: ESP32CAM
 - Pins: https://github.com/ldab/ESP32-CAM-MQTT/blob/master/pics/esp32cam_pinout.png
 - Buy: https://www.aliexpress.com/wholesale?SearchText=ina226
-- OTA-Mod: When you plan to use the OTA you have to change the SPI-Flash from 4MB to 16MB!
-         This requires knowledge and Hardware to decap the Shield of the ESP32 and solder a new one on!
-          I'll used 16MB SPI Flash W25Q128FVSG (other manufacturers will work also)
-          Buy: https://www.aliexpress.com/wholesale?SearchText=W25Q128FVSG
+- OTA-Mod: If you plan to use the OTA you have to change the SPI-Flash from 4MB to 16MB!
+           This requires knowledge and Hardware to decap the Shield of the ESP32 and solder a new one on!
+           I'll used 16MB SPI Flash W25Q128FVSG (other manufacturers will work also)           
+           As I've did break some I/O Ports i replaced the original ESP32 Module with an ESP32 WROOM 16MB
 
+# Parts
+- [ESP32-CAM](https://www.aliexpress.com/wholesale?SearchText=esp32-cam)
+- [ESP32 WROOM 16MB](https://www.aliexpress.com/wholesale?SearchText=esp32+wroom+32d+module+16mb)
+- [16MB SPI Flash W25Q128FVSG](https://www.aliexpress.com/wholesale?SearchText=W25Q128FVSG)
+- [INA226](https://www.aliexpress.com/wholesale?SearchText=ina226)
+- [DFPlayer mini](https://github.com/PowerBroker2/DFPlayerMini_Fast)
+- [18650 Charger Protection 5V Supply](https://www.aliexpress.com/wholesale?SearchText=5V+2A+Charge+Discharge)
+- [18650 Holder !PARALELL!](https://www.aliexpress.com/wholesale?SearchText=18650+holder+cable)
 
-# Libaries
-INA226Lib by Peter Buchegger/Peter Buchegger https://www.arduino.cc/reference/en/libraries/ina226lib/
-- Buy: https://www.aliexpress.com/wholesale?SearchText=ina226
-DFPlayer by DFRobot/Angelo  https://www.arduino.cc/reference/en/libraries/dfrobotdfplayermini/
-- Buy: https://www.aliexpress.com/wholesale?SearchText=DFPlayer
-ESPino32CAM by Github User ThaiEasyElec https://github.com/ThaiEasyElec/ESPIno32CAM
-After downloading the Libary you have to edit the Pins-Declaration inside \Arduino\libraries\ESPIno32CAM\src\ESPino32CAM.h
+# Used Libaries
+- INA226_WE https://github.com/wollewald/INA226_WE
+- DFPlayer https://github.com/PowerBroker2/DFPlayerMini_Fast
+- ESPino32CAM https://github.com/ThaiEasyElec/ESPIno32CAM
+- OTA Implementation: https://github.com/SensorsIot/ESP32-OTA
+
+#ESPino32CAM Config modification
+Pins-Declaration need to be audjusted in \Arduino\libraries\ESPIno32CAM\src\ESPino32CAM.h
 If your LED on the board lights on, you have forgot to edit the pins!
 CAMERA_MODEL_AI_THINKER
-```bash
+```c++
 #define PWDN_GPIO_NUM     32
 #define RESET_GPIO_NUM    -1
 #define XCLK_GPIO_NUM      0
@@ -41,19 +50,10 @@ CAMERA_MODEL_AI_THINKER
 ```
 
 # OTA Implementation
-OTA Implementation: (everything is already included)
-Andreas Spiess https://github.com/SensorsIot/ESP32-OTA
-Video: https://www.youtube.com/watch?v=1pwqS_NUG7Q
-OTA-Mod: When you plan to use the OTA you have to change the SPI-Flash from 4MB to 16MB!
-         This requires knowledge and Hardware to decap the Shield of the ESP32 and solder a new one on!
-         I'll used 16MB SPI Flash W25Q128FVSG (other manufacturers will work also)
-         Buy: https://www.aliexpress.com/wholesale?SearchText=W25Q128FVSG
-
-         After solderig-in a new Flash Chip you have to add a new board by yourself.
-         Add the following lines in \AppData\Local\Arduino15\packages\esp32\hardware\esp32\1.X.X\boards.txt below "esp32cam.build.code_debug=0"
-         After Restarting the Arduino IDE you have to select the Board "AI Thinker ESP32-CAM 16MB Flash"
+A new 16MB need to be added to the configuration fole \AppData\Local\Arduino15\packages\esp32\hardware\esp32\1.X.X\boards.txt below "esp32cam.build.code_debug=0"
+After Restarting the Arduino IDE you have to select the Board "AI Thinker ESP32-CAM 16MB Flash"
          
-```bash
+```c++
 esp32cam16mb.name=AI Thinker ESP32-CAM 16MB Flash
 
 esp32cam16mb.upload.tool=esptool_py
