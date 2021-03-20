@@ -14,6 +14,7 @@ This is an Kids-Toy which plays music by an QR-Code
 - 1x [18650 Holder !PARALELL!](https://www.aliexpress.com/wholesale?SearchText=18650+holder+cable)
 - 1x [MicroUSB Input Board](https://www.aliexpress.com/wholesale?SearchText=Micro+USB+To+DIP+Adapter)
 - 1x [Micro Momentary Switches](https://www.aliexpress.com/wholesale?SearchText=Micro+Momentary+Kit+180)
+- 1m [WS2812B 144LED 1M](https://www.aliexpress.com/wholesale?SearchText=ws2812b+144+led%2Fm)
 - [M3x3 OD4.3mm Brass Inserts](https://www.aliexpress.com/wholesale?SearchText=brass+m3x3)
 - 2x Protected 18650 cell, for example Panasonic NCR18650B. I'll recomment to buy it from a trusted shop to be geniune.
 - Various M3 screws (M3x5 to M3x16)
